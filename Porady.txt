@@ -1,0 +1,8 @@
+Lekcja 92-obiekty dodatkowe stojące obiekty
+lecka 91 zmienna kamera w zaleznosci od stanu
+
+jeżeli bede chciał żeby enemy omijali przeszkody na mapie to:
+hierarchy-> following system -> pathfinder->graphs->
+ obstacle layer mask -> i tutaj ustawic layer jaki beda mialy przeszkodzy i essa
+
+IA ENEMEY - https://www.youtube.com/watch?v=jvtFUfJ6CP8
