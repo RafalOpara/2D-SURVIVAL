@@ -11,8 +11,6 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D myRigidbody;
     Animator myAnimator;
     
-    public bool playerHasHorizontalSpeed=true;
-    public bool lastStandRight=true;
 
     void Start()
     {
@@ -53,20 +51,13 @@ public class PlayerMovement : MonoBehaviour
 
      void FlipSprite()
     {
-        playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
 
         if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2 (Mathf.Sign(myRigidbody.velocity.x), 1f);
-            lastStandRight=true;
         }
-        else
-        {
-            lastStandRight=false;
-        }
-    }
-
-
+    } 
 
 }
 

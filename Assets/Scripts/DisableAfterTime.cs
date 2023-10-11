@@ -18,7 +18,7 @@ public class DisableAfterTime : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer<0f)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
