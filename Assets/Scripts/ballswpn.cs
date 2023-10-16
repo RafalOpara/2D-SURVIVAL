@@ -10,22 +10,22 @@ public class ballswpn : MonoBehaviour
     [SerializeField] float timeToAttack=4f;
     Vector3 currentPosition;
     
+    PlayerMovement playerMovement;
 
     float timer;
-
-    
-    PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
-      
+      playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
         currentPosition=transform.position;
+        
+
 
         timer -= Time.deltaTime;
         if(timer < 0f)
@@ -36,7 +36,9 @@ public class ballswpn : MonoBehaviour
 
     void Attack()
     {
-        Instantiate(wpn2balls,currentPosition,transform.rotation);
+        GameObject bullet = Instantiate(wpn2balls,currentPosition,Quaternion.identity);
         timer=timeToAttack;
+
+        
     }
 }

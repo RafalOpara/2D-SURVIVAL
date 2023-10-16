@@ -20424,6 +20424,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 10
+  myRigidbody: {fileID: 0}
+  playerOnMove: 0
+  playerDirection: {x: 0, y: 0, z: 0}
+  lastPlayerDirection: {x: 0, y: 0, z: 0}
+  test: {x: 0, y: 0}
 --- !u!114 &1580236695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22674,7 +22679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125933715}
   - component: {fileID: 2125933716}
-  - component: {fileID: 2125933718}
+  - component: {fileID: 2125933717}
   m_Layer: 7
   m_Name: wpn_2balls
   m_TagString: Untagged
@@ -22710,8 +22715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wpn2balls: {fileID: 5447934887818561859, guid: 156b5696ea5d51b42b37ac8080504642, type: 3}
-  timeToAttack: 2
---- !u!212 &2125933718
+  timeToAttack: 0.2
+--- !u!212 &2125933717
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22752,7 +22757,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -353101592, guid: 520432036a733f440b216725ddb8e6f6, type: 3}
+  m_Sprite: {fileID: 701472055, guid: 520432036a733f440b216725ddb8e6f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22875,7 +22880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141526119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.5, y: 4.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
