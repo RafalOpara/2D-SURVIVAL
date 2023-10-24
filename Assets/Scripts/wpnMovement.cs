@@ -15,9 +15,7 @@ public class wpnMovement : MonoBehaviour
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-
         playerMovement = FindObjectOfType<PlayerMovement>();
-        direction = playerMovement.playerDirection; 
 
         
         SetDirectory();
@@ -36,27 +34,17 @@ public class wpnMovement : MonoBehaviour
 
         else
         {
-
-            if (direction.magnitude > 0.1f)  // Sprawdź, czy postać się rusza
-            {
-                myRigidBody.velocity = direction.normalized * speed;
-                playerMovement.lastPlayerDirection=myRigidBody.velocity;
-            }
-            else
-            {
-                myRigidBody.velocity = playerMovement.lastPlayerDirection;
-            }
-            
+            myRigidBody.velocity = playerMovement.bulletDirection * speed;
         }
 
-        playerMovement.bulletDirection=myRigidBody.velocity.normalized;
+        playerMovement.bulletSpriteDirection=myRigidBody.velocity.normalized;
        
     }
 
     void UpdateSpritePosition()
     {
        
-        float angle = Mathf.Atan2(playerMovement.bulletDirection.y, playerMovement.bulletDirection.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(playerMovement.bulletSpriteDirection.y, playerMovement.bulletSpriteDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
     }

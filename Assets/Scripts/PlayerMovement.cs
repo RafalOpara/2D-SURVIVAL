@@ -12,11 +12,10 @@ public class PlayerMovement : MonoBehaviour
     Animator myAnimator;
     public bool playerOnMove=false;
 
-/// te dwa ponizej do przepisania w funkcji oddzielnej
-    public Vector3 playerDirection;
-    public Vector3 lastPlayerDirection=new Vector3(1f,0f,0f);
-    public Vector3 bulletDirection= new Vector3(1f,0f,0f);
 
+    public Vector3 bulletSpriteDirection= new Vector3(1f,0f,0f);
+
+    public Vector3 bulletDirection;
 
     void Start()
     {
@@ -27,11 +26,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        playerDirection=myRigidbody.velocity.normalized;
         playerMoveCheck();
         Run();
         FlipSprite();
+        BulletDirectionAfterMove();
 
+    }
+
+    //test
+    void BulletDirectionAfterMove()
+    {
+        if(myRigidbody.velocity.magnitude > 0.1f)
+        {
+            bulletDirection= myRigidbody.velocity.normalized;
+        }
     }
 
     void OnMove(InputValue value)
@@ -74,23 +82,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    /*public Vector3 ShotDirection()
-    {
-        Vector3 WeaponDirection = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
-        if(WeaponDirection!= Vector3.zero)
-        {
-            WeaponDirection=WeaponDirection.normalized;
-        }
-        else
-        {
-            float scaleX = transform.localScale.x;
-            WeaponDirection= new Vector3(scaleX,0,0);
-        }
-
-        return WeaponDirection;
-        
-    }
- */
 }
 
