@@ -43,7 +43,6 @@ public class wpnMovement : MonoBehaviour
 
     void UpdateSpritePosition()
     {
-       
         float angle = Mathf.Atan2(playerMovement.bulletSpriteDirection.y, playerMovement.bulletSpriteDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
 

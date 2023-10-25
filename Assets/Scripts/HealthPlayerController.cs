@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDmgController : MonoBehaviour
-{
-   private Color temporaryColor = new Color (255,0,0,255);
-   private Color basicColor;
-   private SpriteRenderer spriteRenderer;
 
-   [SerializeField] int health= 100;
+public class HealthPlayerController : MonoBehaviour
 
-   float timer;
+{   
+    private Color temporaryColor = new Color (255,0,0,255);
+    private Color basicColor;
+    private SpriteRenderer spriteRenderer;
 
-   void Start()
+    [SerializeField] int health=100;
+    float timer;
+
+     void Start()
    {
       spriteRenderer=GetComponent<SpriteRenderer>();
       basicColor=spriteRenderer.color;
-
    }
 
-   void Update()
+     void Update()
    {
       timer -= Time.deltaTime;
 
@@ -28,8 +28,6 @@ public class EnemyDmgController : MonoBehaviour
          spriteRenderer.color=basicColor;
       }
    }
-
-   
 
    public void TakeDamage(int dmg)
    {
