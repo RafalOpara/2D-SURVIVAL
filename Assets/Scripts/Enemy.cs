@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform targetDestination;
     GameObject targetGameobject;
     [SerializeField] float speed;
-    [SerializeField] int dmg=10;
+    [SerializeField] float dmg=10;
     private bool isTouchingPlayer = false;
 
     Rigidbody2D rgdbd2d;
