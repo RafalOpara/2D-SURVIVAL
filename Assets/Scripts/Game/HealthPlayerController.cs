@@ -53,4 +53,10 @@ public class HealthPlayerController : MonoBehaviour
 
       
    }
+
+     public void GetUpdate(float x)
+    {
+        maxHelath += x;
+
+    }
 }

@@ -18,7 +18,7 @@ TagManager:
   - Floor
   - BackGround
   - Enemy
-  - 
+  - Exp_balls
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4250544719
+    locked: 0
+  - name: Exp_balls
+    uniqueID: 1104660643
     locked: 0
   - name: Enemies
     uniqueID: 3726265151

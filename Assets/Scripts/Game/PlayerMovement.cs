@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        Debug.Log(moveInput);
     }
 
     void Run()
@@ -82,6 +81,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+      public void GetUpdate(float x)
+    {
+        runSpeed += x;
+
+    }
 
 }
 

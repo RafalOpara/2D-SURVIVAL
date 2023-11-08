@@ -7,6 +7,7 @@ public class EnemyDmgController : MonoBehaviour
    private Color temporaryColor = new Color (255,0,0,255);
    private Color basicColor;
    private SpriteRenderer spriteRenderer;
+   [SerializeField] GameObject ExpBall;
 
    [SerializeField] int health= 100;
 
@@ -40,6 +41,9 @@ public class EnemyDmgController : MonoBehaviour
      if(health<=0)
      {
         Destroy(gameObject);
+        Vector3 position = transform.position;
+        GameObject newExpBall = Instantiate(ExpBall,position,Quaternion.identity);
+
      }
 
       

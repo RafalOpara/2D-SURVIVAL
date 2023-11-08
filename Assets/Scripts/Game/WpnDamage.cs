@@ -17,4 +17,10 @@ public class WpnDamage : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+      public void GetUpdate(int x)
+    {
+        dmg += x;
+
+    }
 }

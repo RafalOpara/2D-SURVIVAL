@@ -41,4 +41,10 @@ public class ballswpn : MonoBehaviour
 
         
     }
+
+      public void GetUpdate(float x)
+    {
+        timeToAttack += x;
+
+    }
 }
