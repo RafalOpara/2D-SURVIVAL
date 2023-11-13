@@ -8,6 +8,7 @@ public class ballswpn : MonoBehaviour
 {
     [SerializeField] GameObject wpn2balls;
     [SerializeField] float timeToAttack=4f;
+    [SerializeField] public int dmg = 10;
     Vector3 currentPosition;
     
     PlayerMovement playerMovement;
@@ -45,6 +46,12 @@ public class ballswpn : MonoBehaviour
       public void GetUpdate(float x)
     {
         timeToAttack += x;
+
+    }
+
+       public void GetUpdate(int x)
+    {
+        dmg += x;
 
     }
 }

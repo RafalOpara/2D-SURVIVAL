@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class WpnDamage : MonoBehaviour
 {
-    [SerializeField] int dmg = 10;
+    int dmg;
+
+    ballswpn ballspwn;
+
+    void Start()
+    {
+       ballspwn = FindObjectOfType<ballswpn>();
+       dmg=ballspwn.dmg;
+    }
 
   private void OnTriggerEnter2D(Collider2D other) 
 {
@@ -18,9 +26,5 @@ public class WpnDamage : MonoBehaviour
         }
     }
 
-      public void GetUpdate(int x)
-    {
-        dmg += x;
-
-    }
+   
 }
