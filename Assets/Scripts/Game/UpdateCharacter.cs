@@ -15,7 +15,18 @@ public class UpdateCharacter : MonoBehaviour
     [SerializeField] float updateMaxHalth=1f;
     [SerializeField] float updateMovementSpeed=1f;
 
+
+     int currentupdateAttackSpeedValue=0;
+     int currentupdateDmg =0;
+     float currentupdateMaxHalth=0f;
+     float currentupdateMovementSpeed=0f;
+
     [SerializeField] TextMeshProUGUI lvlText;
+
+    [SerializeField] TextMeshProUGUI currentAttackSpeedText;
+    [SerializeField] TextMeshProUGUI currentDmgText;
+    [SerializeField] TextMeshProUGUI currentMaxHealthText;
+    [SerializeField] TextMeshProUGUI currentMovementSpeedText;
 
     public static bool GameIsPaused=false;
     public GameObject pauseMenuUi;
@@ -37,6 +48,10 @@ public class UpdateCharacter : MonoBehaviour
         expBar.UpdateExpBar(currentExp,maxExp);
 
         lvlText.text="Level:" + currentLvl.ToString();
+        currentAttackSpeedText.text="Attack speed: " + currentupdateAttackSpeedValue.ToString();
+        currentDmgText.text="Damage: " + currentupdateDmg.ToString();
+        currentMaxHealthText.text="Health: " + currentupdateMaxHalth.ToString();
+        currentMovementSpeedText.text="Speed: " + currentupdateMovementSpeed.ToString();
 
     }
 
@@ -90,22 +105,34 @@ public class UpdateCharacter : MonoBehaviour
    public void UpdateAttackSpeed()
     {
         ballswpn.GetUpdate(updateAttackSpeedValue);
+         currentupdateAttackSpeedValue+=updateAttackSpeedValue;
+        currentAttackSpeedText.text="Attack speed: +"+ currentupdateAttackSpeedValue.ToString();
         Resume();
+       
     }
     public void UpdateDmg()
     {
         ballswpn.GetUpdate(updateDmg);
+        currentupdateDmg+=updateDmg;
+        currentDmgText.text="Damage: +" + currentupdateDmg.ToString();
         Resume();
+        
     }
     public void UpdateMaxHalth()
     {
         healthPlayerController.GetUpdate(updateMaxHalth);
+        currentupdateMaxHalth+=updateMaxHalth;
+        currentMaxHealthText.text="Health: +" + currentupdateMaxHalth.ToString();
         Resume();
+        
     }
     public void UpdateMovementSpeed()
     {
         playerMovement.GetUpdate(updateMovementSpeed);
+        currentupdateMovementSpeed+=updateMovementSpeed;
+        currentMovementSpeedText.text="Speed: +" + currentupdateMovementSpeed.ToString();
         Resume();
+        
     }
     
     
