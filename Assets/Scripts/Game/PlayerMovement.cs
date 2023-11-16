@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D myRigidbody;
     Animator myAnimator;
     public bool playerOnMove=false;
+    public Vector3 position;
 
 
     public Vector3 bulletSpriteDirection= new Vector3(1f,0f,0f);
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         Run();
         FlipSprite();
         BulletDirectionAfterMove();
+        position = transform.position;
 
     }
 
