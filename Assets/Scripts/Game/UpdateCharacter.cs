@@ -66,6 +66,7 @@ public class UpdateCharacter : MonoBehaviour
             currentExp=currentExp-maxExp;
             currentLvl++;
             lvlText.text="Level:" + currentLvl.ToString();
+            maxExp+=15;
         }
 
         expBar.UpdateExpBar(currentExp,maxExp);
