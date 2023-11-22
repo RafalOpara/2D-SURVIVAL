@@ -29,6 +29,7 @@ public class ballswpn : MonoBehaviour
 
 
         timer -= Time.deltaTime;
+        
         if(timer < 0f)
         {
             Attack();

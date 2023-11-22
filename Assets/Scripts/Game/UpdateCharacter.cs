@@ -5,6 +5,10 @@ using TMPro;
 
 public class UpdateCharacter : MonoBehaviour
 {
+
+
+    float timeInGame=0f;
+
     [SerializeField] float currentExp;
     [SerializeField] float maxExp;
     [SerializeField] float currentLvl;
@@ -27,6 +31,7 @@ public class UpdateCharacter : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentDmgText;
     [SerializeField] TextMeshProUGUI currentMaxHealthText;
     [SerializeField] TextMeshProUGUI currentMovementSpeedText;
+    [SerializeField] TextMeshProUGUI currentTimeInGame;
 
     public static bool GameIsPaused=false;
     public GameObject pauseMenuUi;
@@ -52,6 +57,7 @@ public class UpdateCharacter : MonoBehaviour
         currentDmgText.text="Damage: " + currentupdateDmg.ToString();
         currentMaxHealthText.text="Health: " + currentupdateMaxHalth.ToString();
         currentMovementSpeedText.text="Speed: " + currentupdateMovementSpeed.ToString();
+        currentTimeInGame.text=timeInGame.ToString("0,0");
 
     }
 
@@ -87,6 +93,8 @@ public class UpdateCharacter : MonoBehaviour
                 Pause();
             }
         }
+        UpdateTimeInGame();
+        
     }
 
     void Resume ()
@@ -136,5 +144,12 @@ public class UpdateCharacter : MonoBehaviour
         
     }
     
+    void UpdateTimeInGame()
+    {
+        timeInGame += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(timeInGame/60);
+        int seconds = Mathf.FloorToInt(timeInGame % 60);
+        currentTimeInGame.text=string.Format("{0:00}:{1:00}",minutes,seconds);
+    }
     
 }
