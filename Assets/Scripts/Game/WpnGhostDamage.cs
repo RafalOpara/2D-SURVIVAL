@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class WpnGhostDamage : MonoBehaviour
 {
-    [SerializeField] string wpntarger;
-
-    int dmg;
+     float dmg;
     
-    ballswpn ballspwn;
+    GhostWpnSpwn ghostWpnSpwn;
+    HealthPlayerController healthPlayerController;
 
     void Start()
     {
-       ballspwn = FindObjectOfType<ballswpn>();
-       dmg=ballspwn.dmg;
+       ghostWpnSpwn = FindObjectOfType<GhostWpnSpwn>();
+       dmg=ghostWpnSpwn.dmg;
+
+       healthPlayerController=FindObjectOfType<HealthPlayerController>();
     }
 
-  private void OnTriggerEnter2D(Collider2D other) 
-{
-    if (other.tag==wpntarger)
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-        EnemyDmgController enemyDmgController = other.GetComponent<EnemyDmgController>();
-            {
-                enemyDmgController.TakeDamage(dmg);
-            }
+        if (other.tag=="Player")
+        {
+            healthPlayerController.TakeDamage(dmg);
             Destroy(gameObject);
+            
         }
-    }
 
+    
+    }
    
 }

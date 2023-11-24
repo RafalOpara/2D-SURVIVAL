@@ -186,8 +186,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5683052349864967759}
-  - component: {fileID: 5683052349864967757}
   - component: {fileID: 5683052349864967756}
+  - component: {fileID: 477566154}
   m_Layer: 7
   m_Name: wpn_2balls (1)
   m_TagString: Untagged
@@ -210,21 +210,6 @@ Transform:
   m_Father: {fileID: 181701802278508796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5683052349864967757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5683052349864967758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bb6b9e823435484b8d8817b096fd540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wpn2balls: {fileID: 8015371441651763463, guid: 397e3de7d68265c4d99d590c13f8d83c, type: 3}
-  timeToAttack: 0.1
-  dmg: 10
 --- !u!212 &5683052349864967756
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -277,3 +262,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &477566154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683052349864967758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88687e5ffd6e424f85ddc7c08ddd938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wpn2balls: {fileID: 8015371441651763463, guid: 397e3de7d68265c4d99d590c13f8d83c, type: 3}
+  timeToAttack: 4
+  dmg: 10

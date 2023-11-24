@@ -7,7 +7,7 @@ public class UpdateCharacter : MonoBehaviour
 {
 
 
-    float timeInGame=0f;
+    public float timeInGame=0f;
 
     [SerializeField] float currentExp;
     [SerializeField] float maxExp;

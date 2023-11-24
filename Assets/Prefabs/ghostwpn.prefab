@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8015371441651763458}
   - component: {fileID: 8015371441651763459}
   - component: {fileID: 8015371441651763456}
-  - component: {fileID: 8938352254697567992}
   - component: {fileID: 5331429413742122242}
   - component: {fileID: -7721260959828962833}
+  - component: {fileID: 4845952513934387479}
   m_Layer: 7
   m_Name: ghostwpn
   m_TagString: Bullet
@@ -144,19 +144,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8938352254697567992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015371441651763463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec02e24b8d6f15448cd107c4ef721fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wpntarger: Player
 --- !u!58 &5331429413742122242
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -186,3 +173,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &4845952513934387479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015371441651763463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbcdbb3eb9f54f43b709b51c116db3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
