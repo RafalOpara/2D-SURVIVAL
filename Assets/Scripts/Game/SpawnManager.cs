@@ -31,11 +31,11 @@ public class SpawnManager : MonoBehaviour
         updateCharacter=FindObjectOfType<UpdateCharacter>();
         timeInGame=updateCharacter.timeInGame;
 
-        pink_slimeTimer=rand.Next(4,10);
-        wolf_Timer=rand.Next(60,120);
-        ghost_Timer=rand.Next(10,30);
-        rat_Timer=rand.Next(10,30);
-        green_slimeTimer=rand.Next(80,160);
+        pink_slimeTimer=-1;
+        wolf_Timer=-1;
+        ghost_Timer=-1;
+        rat_Timer=-1;
+        green_slimeTimer=-1;
 
     }
 
@@ -67,56 +67,85 @@ public class SpawnManager : MonoBehaviour
         newEnemy.GetComponent<Enemy>().SetTarget(player);
     }
 
-    private void pinkSlimeSpawn()
+    int minTimeForSpawnPinkSlime=5;
+    int maxTimeForSpawnPinkSlime=10;
+
+    private void pinkSlimeSpawn() ///30 hp
     {   
         pink_slimeTimer -= Time.deltaTime;
         if(pink_slimeTimer<0)
         {
             SpawnEnemy(pink_slime);
-            pink_slimeTimer=rand.Next(4,10);
+            pink_slimeTimer=rand.Next(minTimeForSpawnPinkSlime,maxTimeForSpawnPinkSlime);
         }
     }
 
-     private void wolfSpawn()
+    int minTimeForSpawnGhost=15;
+    int maxTimeForSpawnGhost=15;
+
+     private void ghostSpawn() //20 hp
     {
-        wolf_Timer-=Time.deltaTime;
-        if(wolf_Timer<0)
+        if(timeInGame>60f)
         {
-            SpawnEnemy(wolf);
-            wolf_Timer=rand.Next(60,120);
+            ghost_Timer-=Time.deltaTime;
+            if(ghost_Timer<0)
+            {
+                SpawnEnemy(ghost);
+                ghost_Timer=rand.Next(minTimeForSpawnGhost,maxTimeForSpawnGhost);
+            }
         }
     }
 
-     private void ghostSpawn()
+
+
+    int minTimeForSpawnWolf=10;
+    int maxTimeForSpawnWolf=15;
+
+     private void wolfSpawn() //30 hp
     {
-        ghost_Timer-=Time.deltaTime;
-        if(ghost_Timer<0)
+        if(timeInGame>600f)
         {
-            SpawnEnemy(ghost);
-            ghost_Timer=rand.Next(10,30);
+            wolf_Timer-=Time.deltaTime;
+            if(wolf_Timer<0)
+            {
+                SpawnEnemy(wolf);
+                wolf_Timer=rand.Next(minTimeForSpawnWolf,maxTimeForSpawnWolf);
+            }
         }
     }
 
-     private void ratSpawn()
+    
+
+    int minTimeForSpawnRat=15;
+    int maxTimeForSpawnRat=40;
+
+     private void ratSpawn() // 10 hp
     {
-        rat_Timer-=Time.deltaTime;
-        if(rat_Timer<0)
+        if(timeInGame>600f)
         {
-            SpawnEnemy(rat);
-            rat_Timer=rand.Next(10,30);
+            rat_Timer-=Time.deltaTime;
+            if(rat_Timer<0)
+            {
+                SpawnEnemy(rat);
+                rat_Timer=rand.Next(minTimeForSpawnRat,maxTimeForSpawnRat);
+            }
         }
-        
     }
 
-     private void greenSlimeSpawn()
+    int minTimeForSpawnGreenSlime=20;
+    int maxTimeForSpawnGreenSlime=25;
+
+     private void greenSlimeSpawn() // 60 hp 
     {
-        green_slimeTimer-=Time.deltaTime;
-        if(green_slimeTimer<0)
+        if(timeInGame>600f)
         {
-            SpawnEnemy(green_slime);
-            green_slimeTimer=rand.Next(80,160);
+            green_slimeTimer-=Time.deltaTime;
+            if(green_slimeTimer<0)
+            {
+                SpawnEnemy(green_slime);
+                green_slimeTimer=rand.Next(minTimeForSpawnGreenSlime,maxTimeForSpawnGreenSlime);
+            }
         }
-       
     }
   
 

@@ -159,8 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d02817e7298c641aff33f4617a98d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExpBall: {fileID: 3961100345936772575, guid: f13d5ba2ef1fade45bb4c1aa9b0afaa1, type: 3}
-  health: 30
+  ExpBall: {fileID: 3961100345936772575, guid: 67aa368981d726347be9c8bc7e1bbace, type: 3}
+  health: 20
 --- !u!70 &6432732429125553314
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class HealthPlayerController : MonoBehaviour
     private Color basicColor;
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField] float health=100;
+    [SerializeField] public float health=100;
     [SerializeField] float maxHelath=100;
     [SerializeField] PlayerHealthBar playerHealthBar;
    

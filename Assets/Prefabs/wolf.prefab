@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetDestination: {fileID: 0}
-  speed: 2
-  dmg: 10
+  speed: 3
+  dmg: 20
 --- !u!114 &1495866839410508386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpBall: {fileID: 3961100345936772575, guid: f13d5ba2ef1fade45bb4c1aa9b0afaa1, type: 3}
-  health: 30
+  health: 40
 --- !u!61 &3125528508766729547
 BoxCollider2D:
   m_ObjectHideFlags: 0

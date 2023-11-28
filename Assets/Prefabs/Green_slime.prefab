@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpBall: {fileID: 3961100345936772575, guid: f13d5ba2ef1fade45bb4c1aa9b0afaa1, type: 3}
-  health: 50
+  health: 70
 --- !u!70 &5078610743203072413
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

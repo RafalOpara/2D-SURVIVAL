@@ -14,14 +14,14 @@ public class UpdateCharacter : MonoBehaviour
     [SerializeField] float currentLvl;
 
 
-    [SerializeField] int updateAttackSpeedValue=1;
-    [SerializeField] int updateDmg =1;
+    [SerializeField] float updateAttackSpeedValue=1;
+    [SerializeField] float updateDmg =1;
     [SerializeField] float updateMaxHalth=1f;
     [SerializeField] float updateMovementSpeed=1f;
 
 
-     int currentupdateAttackSpeedValue=0;
-     int currentupdateDmg =0;
+     float currentupdateAttackSpeedValue=0;
+     float currentupdateDmg =0;
      float currentupdateMaxHalth=0f;
      float currentupdateMovementSpeed=0f;
 
@@ -72,7 +72,16 @@ public class UpdateCharacter : MonoBehaviour
             currentExp=currentExp-maxExp;
             currentLvl++;
             lvlText.text="Level:" + currentLvl.ToString();
-            maxExp+=15;
+            maxExp+=5;
+            if(healthPlayerController.health<100f)
+            {
+                healthPlayerController.health+=50f;
+                if(healthPlayerController.health>100f)
+                {
+                    healthPlayerController.health=100f;
+                }
+            }
+            
         }
 
         expBar.UpdateExpBar(currentExp,maxExp);
@@ -113,7 +122,7 @@ public class UpdateCharacter : MonoBehaviour
 /// 
    public void UpdateAttackSpeed()
     {
-        ballswpn.GetUpdate(updateAttackSpeedValue);
+        ballswpn.GetUpdateAS(updateAttackSpeedValue);
          currentupdateAttackSpeedValue+=updateAttackSpeedValue;
         currentAttackSpeedText.text="Attack speed: +"+ currentupdateAttackSpeedValue.ToString();
         Resume();
@@ -121,7 +130,7 @@ public class UpdateCharacter : MonoBehaviour
     }
     public void UpdateDmg()
     {
-        ballswpn.GetUpdate(updateDmg);
+        ballswpn.GetUpdateDmg(updateDmg);
         currentupdateDmg+=updateDmg;
         currentDmgText.text="Damage: +" + currentupdateDmg.ToString();
         Resume();

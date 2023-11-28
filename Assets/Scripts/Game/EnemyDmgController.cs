@@ -9,7 +9,7 @@ public class EnemyDmgController : MonoBehaviour
    private SpriteRenderer spriteRenderer;
    [SerializeField] GameObject ExpBall;
 
-   [SerializeField] int health= 100;
+   [SerializeField] float health= 100;
 
    float timer;
 
@@ -32,7 +32,7 @@ public class EnemyDmgController : MonoBehaviour
 
    
 
-   public void TakeDamage(int dmg)
+   public void TakeDamage(float dmg)
    {
      health-=dmg;
      spriteRenderer.color=temporaryColor;

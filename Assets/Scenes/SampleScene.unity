@@ -1411,7 +1411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2703171, y: 0.2099117, z: -10.166263}
+  m_LocalPosition: {x: -1.459465, y: 0.20967233, z: -10.166263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22490,7 +22490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1579058332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22736,7 +22736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16f93bd414dc1d34c822512af1bd421f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
+  runSpeed: 6
   myRigidbody: {fileID: 0}
   playerOnMove: 0
   position: {x: 0, y: 0, z: 0}
@@ -22803,9 +22803,9 @@ MonoBehaviour:
   currentExp: 0
   maxExp: 20
   currentLvl: 1
-  updateAttackSpeedValue: 1
-  updateDmg: 1
-  updateMaxHalth: 1
+  updateAttackSpeedValue: 0.2
+  updateDmg: 2
+  updateMaxHalth: 20
   updateMovementSpeed: 1
   lvlText: {fileID: 155260873}
   currentAttackSpeedText: {fileID: 1359412609}
@@ -26106,7 +26106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wpn2balls: {fileID: 5447934887818561859, guid: 156b5696ea5d51b42b37ac8080504642, type: 3}
-  timeToAttack: 1
+  timeToAttack: 2
   dmg: 10
 --- !u!212 &2125933717
 SpriteRenderer:

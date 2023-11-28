@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WpnDamage : MonoBehaviour
 {
-    [SerializeField] string wpntarger;
+    [SerializeField] string wpntarget;
 
-    int dmg;
+    float dmg;
     
     ballswpn ballspwn;
 
@@ -16,16 +16,17 @@ public class WpnDamage : MonoBehaviour
        dmg=ballspwn.dmg;
     }
 
-  private void OnTriggerEnter2D(Collider2D other) 
-{
-    if (other.tag==wpntarger)
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-        EnemyDmgController enemyDmgController = other.GetComponent<EnemyDmgController>();
-            {
-                enemyDmgController.TakeDamage(dmg);
-            }
-            Destroy(gameObject);
+        if (other.tag==wpntarget)
+        {
+            EnemyDmgController enemyDmgController = other.GetComponent<EnemyDmgController>();
+                {
+                    enemyDmgController.TakeDamage(dmg);
+                }
+                Destroy(gameObject);
         }
+        
     }
 
    
