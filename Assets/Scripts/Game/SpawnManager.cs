@@ -49,6 +49,7 @@ public class SpawnManager : MonoBehaviour
             ghostSpawn();
             ratSpawn();
             greenSlimeSpawn();
+            updateTimeOfSpawnMonsters();
         
 
     }
@@ -80,8 +81,8 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    int minTimeForSpawnGhost=15;
-    int maxTimeForSpawnGhost=15;
+    int minTimeForSpawnGhost=11;
+    int maxTimeForSpawnGhost=18;
 
      private void ghostSpawn() //20 hp
     {
@@ -121,7 +122,7 @@ public class SpawnManager : MonoBehaviour
 
      private void ratSpawn() // 10 hp
     {
-        if(timeInGame>600f)
+        if(timeInGame>180f)
         {
             rat_Timer-=Time.deltaTime;
             if(rat_Timer<0)
@@ -132,12 +133,12 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    int minTimeForSpawnGreenSlime=20;
-    int maxTimeForSpawnGreenSlime=25;
+    int minTimeForSpawnGreenSlime=60;
+    int maxTimeForSpawnGreenSlime=80;
 
      private void greenSlimeSpawn() // 60 hp 
     {
-        if(timeInGame>600f)
+       // if(timeInGame>300f)
         {
             green_slimeTimer-=Time.deltaTime;
             if(green_slimeTimer<0)
@@ -146,6 +147,42 @@ public class SpawnManager : MonoBehaviour
                 green_slimeTimer=rand.Next(minTimeForSpawnGreenSlime,maxTimeForSpawnGreenSlime);
             }
         }
+    }
+
+   private void updateTimeOfSpawnMonsters()
+    {
+        ///pinkSlime
+        if(timeInGame==60f)
+        {
+             minTimeForSpawnPinkSlime=4;
+             maxTimeForSpawnPinkSlime=9;
+        }
+
+         if(timeInGame==120f)
+        {
+             minTimeForSpawnPinkSlime=3;
+             maxTimeForSpawnPinkSlime=8;
+        }
+
+          if(timeInGame==240f)
+        {
+             minTimeForSpawnPinkSlime=3;
+             maxTimeForSpawnPinkSlime=6;
+        }
+        //ghost
+
+          if(timeInGame==180f)
+        {
+            minTimeForSpawnGhost=9;
+            maxTimeForSpawnGhost=17;
+        }
+
+          if(timeInGame==240f)
+        {
+            minTimeForSpawnGhost=8;
+            maxTimeForSpawnGhost=15;
+        }
+        
     }
   
 

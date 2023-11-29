@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetDestination: {fileID: 0}
   speed: 0.5
+  speedAfterSlow: 5
   dmg: 20
 --- !u!114 &7945276588104345792
 MonoBehaviour:
@@ -158,8 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d02817e7298c641aff33f4617a98d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExpBall: {fileID: 3961100345936772575, guid: f13d5ba2ef1fade45bb4c1aa9b0afaa1, type: 3}
-  health: 70
+  ExpBall: {fileID: 3961100345936772575, guid: 2d202009e3378a649b2d34f71c09f9b1, type: 3}
+  health: 10
 --- !u!70 &5078610743203072413
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

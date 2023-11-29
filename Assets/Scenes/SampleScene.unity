@@ -22803,8 +22803,8 @@ MonoBehaviour:
   currentExp: 0
   maxExp: 20
   currentLvl: 1
-  updateAttackSpeedValue: 0.2
-  updateDmg: 2
+  updateAttackSpeedValue: 0.1
+  updateDmg: 1
   updateMaxHalth: 20
   updateMovementSpeed: 1
   lvlText: {fileID: 155260873}

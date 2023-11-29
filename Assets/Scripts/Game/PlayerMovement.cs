@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public bool playerOnMove=false;
     public Vector3 position;
 
+ 
 
     public Vector3 bulletSpriteDirection= new Vector3(1f,0f,0f);
 

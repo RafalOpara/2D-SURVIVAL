@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public Transform targetDestination;
     GameObject targetGameobject;
     [SerializeField] float speed;
+    float speedAfterSlow;
     [SerializeField] float dmg=10;
     private bool isTouchingPlayer = false;
 
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     {
         rgdbd2d=GetComponent<Rigidbody2D>();
         healthPlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthPlayerController>();
+        speedAfterSlow=speed;
     }
 
     public void SetTarget(GameObject target)
@@ -35,7 +37,13 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         FlipSprite();
+
         timer -= Time.deltaTime;
+        if(timer<0f)
+        {
+            speed = speedAfterSlow;
+        }
+       
     }
 
     void FlipSprite()
@@ -77,6 +85,12 @@ public class Enemy : MonoBehaviour
         {
             healthPlayerController.TakeDamage(dmg);
         }
+    }
+
+    public void SlowEffect()
+    {
+        speed=speed /2;
+        timer=2f;
     }
 
 }

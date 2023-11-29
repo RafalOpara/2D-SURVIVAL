@@ -42,6 +42,7 @@ public class UpdateCharacter : MonoBehaviour
     PlayerMovement playerMovement;
     ExpBar expBar;
 
+    public bool updateWpnSlow = false;
 
     void Start()
     {
@@ -72,7 +73,7 @@ public class UpdateCharacter : MonoBehaviour
             currentExp=currentExp-maxExp;
             currentLvl++;
             lvlText.text="Level:" + currentLvl.ToString();
-            maxExp+=5;
+            maxExp+=10;
             if(healthPlayerController.health<100f)
             {
                 healthPlayerController.health+=50f;
@@ -160,5 +161,6 @@ public class UpdateCharacter : MonoBehaviour
         int seconds = Mathf.FloorToInt(timeInGame % 60);
         currentTimeInGame.text=string.Format("{0:00}:{1:00}",minutes,seconds);
     }
+    
     
 }
