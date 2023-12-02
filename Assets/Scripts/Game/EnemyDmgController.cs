@@ -7,11 +7,13 @@ public class EnemyDmgController : MonoBehaviour
    private Color temporaryColor = new Color (255,0,0,255);
    private Color basicColor;
    private SpriteRenderer spriteRenderer;
-   [SerializeField] GameObject ExpBall;
 
+   [SerializeField] public GameObject ExpBall;
    [SerializeField] float health= 100;
 
    float timer;
+
+
 
    void Start()
    {
@@ -43,7 +45,7 @@ public class EnemyDmgController : MonoBehaviour
         Destroy(gameObject);
         Vector3 position = transform.position;
         GameObject newExpBall = Instantiate(ExpBall,position,Quaternion.identity);
-
+         
      }
 
       

@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 202051453924219469}
   - component: {fileID: 7945276588104345792}
   - component: {fileID: 5078610743203072413}
+  - component: {fileID: 3733856142831421212}
   m_Layer: 10
-  m_Name: Green_slime
+  m_Name: Green_slimeBoosted
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2142298678854671814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.32, y: 4.52, z: 0.019302638}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3475, y: 1.278, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d6eb508d2823d8d448e2204650724e3b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18356179, g: 0.31132078, b: 0.22404112, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpBall: {fileID: 3961100345936772575, guid: 67aa368981d726347be9c8bc7e1bbace, type: 3}
-  health: 100
+  health: 150
 --- !u!70 &5078610743203072413
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -176,3 +177,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.22830129, y: 0.012014866}
   m_Size: {x: 4.655399, y: 4.655399}
   m_Direction: 0
+--- !u!114 &3733856142831421212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142298678854671814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4678be2195ca1bd4b8c0e712b0d31f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialDrop: {fileID: 3961100345936772575, guid: 2d202009e3378a649b2d34f71c09f9b1, type: 3}

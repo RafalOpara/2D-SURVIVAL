@@ -1411,7 +1411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.459465, y: 0.20967233, z: -10.166263}
+  m_LocalPosition: {x: -1.4763317, y: 0.20965135, z: -10.166263}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8702,16 +8702,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pink_slime: {fileID: 5502214378498213827, guid: f3669cf8fca1e0246b57a7e771e197dc, type: 3}
+  pink_slimeBoosted: {fileID: 5502214378498213827, guid: 779027cdb62a8fe42b5dda9ac36aa5c1, type: 3}
   wolf: {fileID: 7438769339343157092, guid: 8b9ef57c23563e94f9606056385a1011, type: 3}
   ghost: {fileID: 181701802278508793, guid: 6670050cddb954b45aa922b7f63290ab, type: 3}
   rat: {fileID: 635655479578304889, guid: f456e4920979c2f47847a40504e84244, type: 3}
   green_slime: {fileID: 2142298678854671814, guid: 077f87626431c4649adfab44eb24c9a9, type: 3}
+  green_slimeBoosted: {fileID: 2142298678854671814, guid: 39b670b4893653f4ba455eff7ba92ab7, type: 3}
   spawnArea: {x: 20, y: 10}
   pink_slimeTimer: 0
+  pink_slimeBoostedTimer: 0
   ghost_Timer: 0
   wolf_Timer: 0
   rat_Timer: 0
   green_slimeTimer: 0
+  green_slimeBoostedTimer: 0
   player: {fileID: 1580236688}
 --- !u!1 &1014186972
 GameObject:
@@ -22814,6 +22818,7 @@ MonoBehaviour:
   currentMovementSpeedText: {fileID: 334041375}
   currentTimeInGame: {fileID: 1232600294}
   pauseMenuUi: {fileID: 1536706883}
+  updateWpnSlow: 0
 --- !u!1 &1592092653
 GameObject:
   m_ObjectHideFlags: 0
