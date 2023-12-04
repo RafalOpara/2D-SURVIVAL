@@ -8,7 +8,10 @@ public class SpawnManager : MonoBehaviour
      [SerializeField] GameObject pink_slimeBoosted;
 
     [SerializeField] GameObject wolf;
+
     [SerializeField] GameObject ghost;
+    [SerializeField] GameObject ghostBoosted;
+
     [SerializeField] GameObject rat;
 
     [SerializeField] GameObject green_slime;
@@ -23,6 +26,9 @@ public class SpawnManager : MonoBehaviour
 
 
     [SerializeField] float ghost_Timer;
+    [SerializeField] float ghostBoosted_Timer;
+
+
     [SerializeField] float wolf_Timer;
     [SerializeField] float rat_Timer;
 
@@ -48,7 +54,10 @@ public class SpawnManager : MonoBehaviour
         pink_slimeBoostedTimer=-1;
 
         wolf_Timer=-1;
+
         ghost_Timer=-1;
+        ghostBoosted_Timer=-1;
+
         rat_Timer=-1;
 
         green_slimeTimer=-1;
@@ -65,6 +74,7 @@ public class SpawnManager : MonoBehaviour
             pinkSlimeBoostedSpawn();
             wolfSpawn();
             ghostSpawn();
+            ghostBoostedSpawn();
             ratSpawn();
             greenSlimeSpawn();
             greenSlimeBoostedSpawn();
@@ -123,13 +133,29 @@ public class SpawnManager : MonoBehaviour
 
      private void ghostSpawn() //20 hp
     {
-        if(timeInGame>60f)
+        if(timeInGame>1f)
         {
             ghost_Timer-=Time.deltaTime;
             if(ghost_Timer<0)
             {
-                SpawnEnemy(ghost);
+                SpawnEnemy(ghostBoosted);
                 ghost_Timer=rand.Next(minTimeForSpawnGhost,maxTimeForSpawnGhost);
+            }
+        }
+    }
+
+    int minTimeForSpawnGhostBoosted=11;
+    int maxTimeForSpawnGhostBoosted=18;
+
+     private void ghostBoostedSpawn() //20 hp
+    {
+        if(timeInGame>60f)
+        {
+            ghost_Timer-=Time.deltaTime;
+            if(ghostBoosted_Timer<0)
+            {
+                SpawnEnemy(ghostBoosted);
+                ghostBoosted_Timer=rand.Next(minTimeForSpawnGhostBoosted,maxTimeForSpawnGhostBoosted);
             }
         }
     }
@@ -214,20 +240,28 @@ public class SpawnManager : MonoBehaviour
          if(timeInGame==120f)
         {
              minTimeForSpawnPinkSlime=3;
-             maxTimeForSpawnPinkSlime=8;
+             maxTimeForSpawnPinkSlime=6;
+        }
+
+          if(timeInGame==180f)
+        {
+             minTimeForSpawnPinkSlime=2;
+             maxTimeForSpawnPinkSlime=4;
         }
 
           if(timeInGame==240f)
         {
-             minTimeForSpawnPinkSlime=3;
-             maxTimeForSpawnPinkSlime=6;
+             minTimeForSpawnPinkSlime=1;
+             maxTimeForSpawnPinkSlime=3;        
         }
 
-         if(timeInGame==500f)
+           if(timeInGame==330f)
         {
-             minTimeForSpawnPinkSlime=3;
-             maxTimeForSpawnPinkSlime=5;
+             minTimeForSpawnPinkSlime=1;
+             maxTimeForSpawnPinkSlime=2;        
         }
+
+
 
         //pinkSlimeBoosted
         if(timeInGame==480f)
@@ -236,19 +270,24 @@ public class SpawnManager : MonoBehaviour
             maxTimeForSpawnPinkSlimeBoosted=20;
         }
 
+          if(timeInGame==540f)
+        {
+            minTimeForSpawnPinkSlimeBoosted=6;
+            maxTimeForSpawnPinkSlimeBoosted=15;
+        }
 
         //ghost
 
           if(timeInGame==180f)
         {
-            minTimeForSpawnGhost=9;
-            maxTimeForSpawnGhost=17;
+            minTimeForSpawnGhost=7;
+            maxTimeForSpawnGhost=15;
         }
 
           if(timeInGame==240f)
         {
-            minTimeForSpawnGhost=8;
-            maxTimeForSpawnGhost=15;
+            minTimeForSpawnGhost=6;
+            maxTimeForSpawnGhost=10;
         }
           if(timeInGame==420f)
         {
@@ -256,6 +295,18 @@ public class SpawnManager : MonoBehaviour
             maxTimeForSpawnGhost=12;
         }
         
+        //rat
+           if(timeInGame==180f)
+        {
+            minTimeForSpawnRat=15;
+            maxTimeForSpawnRat=25;
+        }
+             if(timeInGame==240f)
+        {
+            minTimeForSpawnRat=13;
+            maxTimeForSpawnRat=20;
+        }
+
     }
   
 

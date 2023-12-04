@@ -7,7 +7,7 @@ using UnityEngine;
 public class GhostWpnSpwn : MonoBehaviour
 {
     [SerializeField] GameObject wpn2balls;
-    [SerializeField] float timeToAttack=4f;
+    [SerializeField] float timeToAttack=5.5f;
     [SerializeField] public float dmg = 10f;
     Vector3 currentPosition;
     

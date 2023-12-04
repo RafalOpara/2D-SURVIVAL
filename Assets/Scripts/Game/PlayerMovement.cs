@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public bool playerOnMove=false;
     public Vector3 position;
 
+    float timer;
+    float speedAfterSlow;
  
 
     public Vector3 bulletSpriteDirection= new Vector3(1f,0f,0f);
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator= GetComponent<Animator>();
+        speedAfterSlow=runSpeed;
     }
 
     void Update()
@@ -33,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite();
         BulletDirectionAfterMove();
         position = transform.position;
+
+        timer -= Time.deltaTime;
+        if(timer<0f)
+        {
+            runSpeed = speedAfterSlow;
+        }
 
     }
 
@@ -88,6 +97,12 @@ public class PlayerMovement : MonoBehaviour
     {
         runSpeed += x;
 
+    }
+
+    public void SlowEffect()
+    {
+        runSpeed=runSpeed /2;
+        timer=2f;
     }
 
 }
