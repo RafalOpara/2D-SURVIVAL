@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 5331429413742122242}
   - component: {fileID: -7721260959828962833}
   - component: {fileID: 4845952513934387479}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: ghostwpn
-  m_TagString: Bullet
+  m_TagString: enemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -44422577
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 39c935c87eea92544a6e263347d4f4ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

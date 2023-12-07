@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 5331429413742122242}
   - component: {fileID: -7721260959828962833}
   - component: {fileID: 4628128376126283834}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: ghostBoostedwpn
-  m_TagString: Bullet
+  m_TagString: enemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -44422577
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6ce7d758dac494cc393bd4437dfdb24e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,9 +157,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.9976872, y: 0}
   serializedVersion: 2
-  m_Radius: 0.50000006
+  m_Radius: 0.15809703
 --- !u!114 &-7721260959828962833
 MonoBehaviour:
   m_ObjectHideFlags: 0

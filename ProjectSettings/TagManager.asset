@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - enemyBullet
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - BackGround
   - Enemy
   - Exp_balls
-  - 
-  - 
+  - Shield
+  - enemyBullet
   - 
   - 
   - 
@@ -42,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Shield
+    uniqueID: 282376221
     locked: 0
   - name: Player
     uniqueID: 4250544719

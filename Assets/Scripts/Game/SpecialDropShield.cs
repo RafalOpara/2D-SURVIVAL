@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialDrop : MonoBehaviour
+public class SpecialDropShield : MonoBehaviour
 {
     [SerializeField] public GameObject specialDrop;
 
@@ -15,7 +15,7 @@ public class SpecialDrop : MonoBehaviour
         updateCharacter=FindObjectOfType<UpdateCharacter>();
         enemyDmgController=FindObjectOfType<EnemyDmgController>();
 
-        if(updateCharacter.updateWpnSlow==false)
+        if(updateCharacter.updateShield==false)
         {
             enemyDmgController.ExpBall=specialDrop;
         }

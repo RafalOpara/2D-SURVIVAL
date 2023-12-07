@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -44422577
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 701472055, guid: 520432036a733f440b216725ddb8e6f6, type: 3}
   m_Color: {r: 0.62768435, g: 0.24670699, b: 0.6792453, a: 1}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpBall: {fileID: 3961100345936772575, guid: f13d5ba2ef1fade45bb4c1aa9b0afaa1, type: 3}
-  health: 21
+  health: 31
 --- !u!70 &1701210635391407000
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] GameObject ghost;
     [SerializeField] GameObject ghostBoosted;
+     [SerializeField] GameObject BossGhost;
 
     [SerializeField] GameObject rat;
 
@@ -27,6 +28,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] float ghost_Timer;
     [SerializeField] float ghostBoosted_Timer;
+    [SerializeField] float BossGhost_Timer;
 
 
     [SerializeField] float wolf_Timer;
@@ -40,6 +42,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] GameObject player;
     float timeInGame;
+    
 
     System.Random rand = new System.Random();
 
@@ -75,6 +78,7 @@ public class SpawnManager : MonoBehaviour
             wolfSpawn();
             ghostSpawn();
             ghostBoostedSpawn();
+            BossGhostSpawn();
             ratSpawn();
             greenSlimeSpawn();
             greenSlimeBoostedSpawn();
@@ -128,34 +132,50 @@ public class SpawnManager : MonoBehaviour
     }
 
 
-    int minTimeForSpawnGhost=11;
-    int maxTimeForSpawnGhost=18;
+    int minTimeForSpawnGhost=30;
+    int maxTimeForSpawnGhost=45;
 
      private void ghostSpawn() //20 hp
     {
-        if(timeInGame>1f)
+        if(timeInGame>60f)
         {
             ghost_Timer-=Time.deltaTime;
             if(ghost_Timer<0)
             {
-                SpawnEnemy(ghostBoosted);
+                SpawnEnemy(ghost);
                 ghost_Timer=rand.Next(minTimeForSpawnGhost,maxTimeForSpawnGhost);
             }
         }
     }
 
-    int minTimeForSpawnGhostBoosted=11;
-    int maxTimeForSpawnGhostBoosted=18;
+    int minTimeForSpawnGhostBoosted=45;
+    int maxTimeForSpawnGhostBoosted=50;
 
      private void ghostBoostedSpawn() //20 hp
     {
-        if(timeInGame>60f)
+        if(timeInGame>240f)
         {
-            ghost_Timer-=Time.deltaTime;
+            ghostBoosted_Timer-=Time.deltaTime;
             if(ghostBoosted_Timer<0)
             {
                 SpawnEnemy(ghostBoosted);
                 ghostBoosted_Timer=rand.Next(minTimeForSpawnGhostBoosted,maxTimeForSpawnGhostBoosted);
+            }
+        }
+    }
+
+    int minTimeForSpawnBossGhost=999999;
+    int maxTimeForSpawnBossGhost=999999;
+
+     private void BossGhostSpawn() //20 hp
+    {
+        if(timeInGame>300f)
+        {
+            BossGhost_Timer-=Time.deltaTime;
+            if(BossGhost_Timer<0)
+            {
+                SpawnEnemy(BossGhost);
+                BossGhost_Timer=rand.Next(minTimeForSpawnBossGhost,maxTimeForSpawnBossGhost);
             }
         }
     }
@@ -167,7 +187,7 @@ public class SpawnManager : MonoBehaviour
 
      private void wolfSpawn() //30 hp
     {
-        if(timeInGame>600f)
+        if(timeInGame>800f)
         {
             wolf_Timer-=Time.deltaTime;
             if(wolf_Timer<0)
@@ -180,8 +200,8 @@ public class SpawnManager : MonoBehaviour
 
     
 
-    int minTimeForSpawnRat=15;
-    int maxTimeForSpawnRat=40;
+    int minTimeForSpawnRat=13;
+    int maxTimeForSpawnRat=22;
 
      private void ratSpawn() // 10 hp
     {
@@ -196,12 +216,12 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    int minTimeForSpawnGreenSlime=60;
-    int maxTimeForSpawnGreenSlime=80;
+    int minTimeForSpawnGreenSlime=40;
+    int maxTimeForSpawnGreenSlime=60;
 
      private void greenSlimeSpawn() // 60 hp 
     {
-        if(timeInGame>500f)
+        if(timeInGame>570f)
         {
             green_slimeTimer-=Time.deltaTime;
             if(green_slimeTimer<0)
@@ -217,7 +237,7 @@ public class SpawnManager : MonoBehaviour
 
      private void greenSlimeBoostedSpawn() // 150 hp 
     {
-        if(timeInGame>380f)
+        if(timeInGame>480f)
         {
             green_slimeBoostedTimer-=Time.deltaTime;
             if(green_slimeBoostedTimer<0)
@@ -231,46 +251,51 @@ public class SpawnManager : MonoBehaviour
    private void updateTimeOfSpawnMonsters()
     {
         ///pinkSlime
-        if(timeInGame==60f)
+        if (timeInGame > 60f)
         {
-             minTimeForSpawnPinkSlime=4;
-             maxTimeForSpawnPinkSlime=9;
+            minTimeForSpawnPinkSlime = 4;
+            maxTimeForSpawnPinkSlime = 5;
+        }
+        else if (timeInGame > 120f && timeInGame < 150f)
+        {
+            minTimeForSpawnPinkSlime = 3;
+            maxTimeForSpawnPinkSlime = 6;
+        }
+         else if (timeInGame > 180f && timeInGame < 240f)
+        {
+            minTimeForSpawnPinkSlime = 3;
+            maxTimeForSpawnPinkSlime = 5;
+        }
+         else if (timeInGame > 240f && timeInGame < 300f)
+        {
+            minTimeForSpawnPinkSlime = 2;
+            maxTimeForSpawnPinkSlime = 4;
+        }
+         else if (timeInGame >300f && timeInGame < 360f)
+        {
+            minTimeForSpawnPinkSlime = 2;
+            maxTimeForSpawnPinkSlime = 3;
         }
 
-         if(timeInGame==120f)
+          else if (timeInGame >480f && timeInGame < 540f)
         {
-             minTimeForSpawnPinkSlime=3;
-             maxTimeForSpawnPinkSlime=6;
+            minTimeForSpawnPinkSlime = 2;
+            maxTimeForSpawnPinkSlime = 4;
         }
 
-          if(timeInGame==180f)
-        {
-             minTimeForSpawnPinkSlime=2;
-             maxTimeForSpawnPinkSlime=4;
-        }
 
-          if(timeInGame==240f)
-        {
-             minTimeForSpawnPinkSlime=1;
-             maxTimeForSpawnPinkSlime=3;        
-        }
 
-           if(timeInGame==330f)
-        {
-             minTimeForSpawnPinkSlime=1;
-             maxTimeForSpawnPinkSlime=2;        
-        }
 
 
 
         //pinkSlimeBoosted
-        if(timeInGame==480f)
+        if(timeInGame>600f)
         {
             minTimeForSpawnPinkSlimeBoosted=8;
             maxTimeForSpawnPinkSlimeBoosted=20;
         }
 
-          if(timeInGame==540f)
+          if(timeInGame>660&&timeInGame<720)
         {
             minTimeForSpawnPinkSlimeBoosted=6;
             maxTimeForSpawnPinkSlimeBoosted=15;
@@ -278,33 +303,49 @@ public class SpawnManager : MonoBehaviour
 
         //ghost
 
-          if(timeInGame==180f)
+          if(timeInGame>120f&&timeInGame<180)
         {
-            minTimeForSpawnGhost=7;
+            minTimeForSpawnGhost=25;
+            maxTimeForSpawnGhost=30;
+        }
+
+         else if(timeInGame>180f&&timeInGame<240)
+        {
+            minTimeForSpawnGhost=17;
+            maxTimeForSpawnGhost=22;
+        }
+        else if(timeInGame>240f&&timeInGame<600)
+        {
+            minTimeForSpawnGhost=15;
+            maxTimeForSpawnGhost=20;
+        }
+        else if(timeInGame>600f&&timeInGame<660)
+        {
+            minTimeForSpawnGhost=10;
             maxTimeForSpawnGhost=15;
         }
 
-          if(timeInGame==240f)
+        //ghostboosted
+
+            if(timeInGame>240f)
         {
-            minTimeForSpawnGhost=6;
-            maxTimeForSpawnGhost=10;
+            minTimeForSpawnGhost=30;
+            maxTimeForSpawnGhost=35;
         }
-          if(timeInGame==420f)
-        {
-            minTimeForSpawnGhost=6;
-            maxTimeForSpawnGhost=12;
-        }
-        
+       
         //rat
-           if(timeInGame==180f)
-        {
-            minTimeForSpawnRat=15;
-            maxTimeForSpawnRat=25;
-        }
-             if(timeInGame==240f)
+
+             if(timeInGame>240f)
         {
             minTimeForSpawnRat=13;
-            maxTimeForSpawnRat=20;
+            maxTimeForSpawnRat=18;
+        }
+
+        
+             if(timeInGame>420f)
+        {
+            minTimeForSpawnRat=10;
+            maxTimeForSpawnRat=15;
         }
 
     }

@@ -44,6 +44,11 @@ public class UpdateCharacter : MonoBehaviour
 
     public bool updateWpnSlow = false;
 
+    public bool updateShield=false;
+     [SerializeField] GameObject shield;
+    
+    
+
     void Start()
     {
         ballswpn=FindObjectOfType<ballswpn>();
@@ -82,10 +87,15 @@ public class UpdateCharacter : MonoBehaviour
                     healthPlayerController.health=100f;
                 }
             }
+
+          
             
         }
 
         expBar.UpdateExpBar(currentExp,maxExp);
+
+
+        
 
     }
 
@@ -162,5 +172,9 @@ public class UpdateCharacter : MonoBehaviour
         currentTimeInGame.text=string.Format("{0:00}:{1:00}",minutes,seconds);
     }
     
+    public void ActivationShieldObject()
+    {
+       shield.gameObject.SetActive(true);
+    }
     
 }
