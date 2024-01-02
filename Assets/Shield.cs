@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
+     AudioManager audioManager;
+
+    void Start()
+    {
+        audioManager=FindObjectOfType<AudioManager>();
+    }
    
     private bool canBeActivatedAgain = false;
 
@@ -32,5 +38,7 @@ private void OnTriggerEnter2D(Collider2D other)
     {
         canBeActivatedAgain = false;
         gameObject.SetActive(true);
+        audioManager.PlaySFX(audioManager.getShield);
+
     }
 }

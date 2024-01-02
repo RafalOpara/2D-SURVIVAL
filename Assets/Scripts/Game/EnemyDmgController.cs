@@ -13,13 +13,13 @@ public class EnemyDmgController : MonoBehaviour
 
    float timer;
 
-
+    AudioManager audioManager;
 
    void Start()
    {
       spriteRenderer=GetComponent<SpriteRenderer>();
       basicColor=spriteRenderer.color;
-
+      audioManager=FindObjectOfType<AudioManager>();
    }
 
    void Update()
@@ -36,15 +36,18 @@ public class EnemyDmgController : MonoBehaviour
 
    public void TakeDamage(float dmg)
    {
+      audioManager.PlaySFX(audioManager.enemyTakeDmg);
      health-=dmg;
      spriteRenderer.color=temporaryColor;
       timer=0.3f;
+      
       
      if(health<=0)
      {
         Destroy(gameObject);
         Vector3 position = transform.position;
         GameObject newExpBall = Instantiate(ExpBall,position,Quaternion.identity);
+        audioManager.PlaySFX(audioManager.killEnemy);
          
      }
 

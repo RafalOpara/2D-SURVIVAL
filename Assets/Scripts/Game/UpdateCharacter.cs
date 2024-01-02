@@ -5,7 +5,7 @@ using TMPro;
 
 public class UpdateCharacter : MonoBehaviour
 {
-
+     AudioManager audioManager;
 
     public float timeInGame=0f;
 
@@ -65,12 +65,14 @@ public class UpdateCharacter : MonoBehaviour
         currentMovementSpeedText.text="Speed: " + currentupdateMovementSpeed.ToString();
         currentTimeInGame.text=timeInGame.ToString("0,0");
 
+        audioManager=FindObjectOfType<AudioManager>();
+
     }
 
     public void GetExp(int x)
     {
         currentExp += x;
-        
+        audioManager.PlaySFX(audioManager.collectExp);
 
         if(currentExp>=maxExp)
         {

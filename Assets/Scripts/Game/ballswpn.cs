@@ -12,6 +12,7 @@ public class ballswpn : MonoBehaviour
     Vector3 currentPosition;
     
     PlayerMovement playerMovement;
+    AudioManager audioManager;
 
     float timer;
 
@@ -19,6 +20,7 @@ public class ballswpn : MonoBehaviour
     void Start()
     {
       playerMovement = FindObjectOfType<PlayerMovement>();
+      audioManager=FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class ballswpn : MonoBehaviour
     {
         GameObject bullet = Instantiate(wpn2balls,currentPosition,Quaternion.identity);
         timer=timeToAttack;
+        audioManager.PlaySFX(audioManager.shoot);
 
         
     }
