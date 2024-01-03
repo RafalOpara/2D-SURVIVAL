@@ -7,6 +7,7 @@ public class UpdateSlow : MonoBehaviour
     bool wasCollected = false;
 
     UpdateCharacter updateCharacter;
+    
 
     void Start()
     {
@@ -21,7 +22,11 @@ public class UpdateSlow : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(gameObject);
             updateCharacter.updateWpnSlow=true;
+
+            updateCharacter.UpdateSlowInfo();
             
         }
+
+
     }
 }

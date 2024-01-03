@@ -22,6 +22,8 @@ public class UpdateShield : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(gameObject);
             updateCharacter.ActivationShieldObject();
+
+            updateCharacter.UpdateShieldInfo();
             
         }
     }

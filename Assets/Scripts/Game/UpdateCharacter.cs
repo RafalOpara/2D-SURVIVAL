@@ -35,6 +35,8 @@ public class UpdateCharacter : MonoBehaviour
 
     public static bool GameIsPaused=false;
     public GameObject pauseMenuUi;
+    public GameObject updateSlowInfo;
+    public GameObject updateShieldInfo;
 
     ballswpn ballswpn;
     WpnDamage wpnDamage;
@@ -43,8 +45,8 @@ public class UpdateCharacter : MonoBehaviour
     ExpBar expBar;
 
     public bool updateWpnSlow = false;
-
     public bool updateShield=false;
+
      [SerializeField] GameObject shield;
     
     
@@ -177,6 +179,30 @@ public class UpdateCharacter : MonoBehaviour
     public void ActivationShieldObject()
     {
        shield.gameObject.SetActive(true);
+    }
+
+    /////////////////////////////
+    ///
+
+     public void UpdateSlowInfo ()
+    {
+        updateSlowInfo.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused=true;
+    }
+
+    public void UpdateShieldInfo()
+    {
+        updateShieldInfo.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused=true;
+    }
+
+     public void ResumeButton()
+    {
+        Resume();
+        updateSlowInfo.SetActive(false);
+        updateShieldInfo.SetActive(false);
     }
     
 }
